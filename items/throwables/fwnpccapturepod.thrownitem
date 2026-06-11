@@ -1,0 +1,24 @@
+{
+  "itemName" : "fwnpccapturepod",
+  "price" : 750,
+  "maxStack" : 1000,
+  "rarity" : "Uncommon",
+  "category" : "throwableItem",
+
+  "description" : "A modified capture pod tuned for weakened humanoid lifeforms.",
+  "shortdescription" : "NPC Capture Pod",
+
+  "inventoryIcon" : "fwnpccapturepod.png",
+  "image" : "fwnpccapturepod.png",
+
+  "ammoUsage" : 1,
+  "edgeTrigger" : false,
+  "windupTime" : 0.0,
+  "cooldown" : 0.5,
+
+  "projectileType" : "fwnpccapturepod",
+  "projectileConfig" : {
+    "captureHealthFraction" : 0.50,
+    "searchRadius" : 1.75
+  }
+}

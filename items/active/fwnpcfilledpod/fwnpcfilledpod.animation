@@ -1,0 +1,31 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "pod" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {}
+        }
+      }
+    },
+
+    "parts" : {
+      "pod" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0.5, 0]
+        },
+
+        "partStates" : {
+          "pod" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "fwnpcfilledpod",
+  "price" : 750,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "category" : "tool",
+
+  "description" : "A pod containing a captured NPC.",
+  "shortdescription" : "Filled NPC Pod",
+
+  "inventoryIcon" : "fwnpcfilledpod.png",
+
+  "twoHanded" : false,
+
+  "animation" : "/items/active/fwnpcfilledpod/fwnpcfilledpod.animation",
+  "animationParts" : {
+    "pod" : "fwnpcfilledpod.png"
+  },
+
+  "scripts" : [ "/scripts/activeitems/fwnpcfilledpod.lua" ]
+}

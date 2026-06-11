@@ -1,0 +1,224 @@
+{
+  "globalTagDefaults": {
+    "fwStationImage": "/objects/fwnpcstations/teststation/fwnpcteststation_station.png",
+    "fwBlankPoseImage": "/objects/fwnpcstations/actors/blank_pose.png",
+    "fwBackArmImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/backarm.png",
+    "fwBodyImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/body.png",
+    "fwHeadImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/head.png",
+    "fwHairImage": "/objects/fwnpcstations/actors/hair/generic/neutral/default.png",
+    "fwFrontArmImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/frontarm.png",
+    "fwBodyDirectives": "",
+    "fwHeadDirectives": "",
+    "fwHairDirectives": ""
+  },
+  "animatedParts": {
+    "stateTypes": {
+      "occupancy": {
+        "default": "empty",
+        "states": {
+          "empty": {
+            "frames": 1,
+            "cycle": 1.0,
+            "mode": "loop"
+          },
+          "occupied": {
+            "frames": 1,
+            "cycle": 1.0,
+            "mode": "loop"
+          }
+        }
+      },
+      "pose": {
+        "default": "hidden",
+        "states": {
+          "hidden": {
+            "frames": 1,
+            "cycle": 1.0,
+            "mode": "loop"
+          },
+          "idle": {
+            "frames": 4,
+            "cycle": 1.0,
+            "mode": "loop"
+          },
+          "struggle": {
+            "frames": 4,
+            "cycle": 0.55,
+            "mode": "loop"
+          }
+        }
+      }
+    },
+    "parts": {
+      "station": {
+        "properties": {
+          "centered": false,
+          "zLevel": 0,
+          "offset": [
+            0,
+            0
+          ]
+        },
+        "partStates": {
+          "occupancy": {
+            "empty": {
+              "properties": {
+                "image": "<fwStationImage>:empty.<frame>"
+              }
+            },
+            "occupied": {
+              "properties": {
+                "image": "<fwStationImage>:occupied.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "actorBackArm": {
+        "properties": {
+          "centered": false,
+          "zLevel": 1,
+          "offset": [
+            0,
+            0
+          ]
+        },
+        "partStates": {
+          "pose": {
+            "hidden": {
+              "properties": {
+                "image": "<fwBlankPoseImage>:hidden.<frame>"
+              }
+            },
+            "idle": {
+              "properties": {
+                "image": "<fwBackArmImage>:idle.<frame><fwBodyDirectives>"
+              }
+            },
+            "struggle": {
+              "properties": {
+                "image": "<fwBackArmImage>:struggle.<frame><fwBodyDirectives>"
+              }
+            }
+          }
+        }
+      },
+      "actorBody": {
+        "properties": {
+          "centered": false,
+          "zLevel": 2,
+          "offset": [
+            0,
+            0
+          ]
+        },
+        "partStates": {
+          "pose": {
+            "hidden": {
+              "properties": {
+                "image": "<fwBlankPoseImage>:hidden.<frame>"
+              }
+            },
+            "idle": {
+              "properties": {
+                "image": "<fwBodyImage>:idle.<frame><fwBodyDirectives>"
+              }
+            },
+            "struggle": {
+              "properties": {
+                "image": "<fwBodyImage>:struggle.<frame><fwBodyDirectives>"
+              }
+            }
+          }
+        }
+      },
+      "actorHead": {
+        "properties": {
+          "centered": false,
+          "zLevel": 5,
+          "offset": [
+            0.2,
+            -1.4
+          ]
+        },
+        "partStates": {
+          "pose": {
+            "hidden": {
+              "properties": {
+                "image": "<fwBlankPoseImage>:hidden.<frame>"
+              }
+            },
+            "idle": {
+              "properties": {
+                "image": "<fwHeadImage>:normal<fwHeadDirectives>"
+              }
+            },
+            "struggle": {
+              "properties": {
+                "image": "<fwHeadImage>:normal<fwHeadDirectives>"
+              }
+            }
+          }
+        }
+      },
+      "actorHair": {
+        "properties": {
+          "centered": false,
+          "zLevel": 6,
+          "offset": [
+            0.2,
+            -1.4
+          ]
+        },
+        "partStates": {
+          "pose": {
+            "hidden": {
+              "properties": {
+                "image": "<fwBlankPoseImage>:hidden.<frame>"
+              }
+            },
+            "idle": {
+              "properties": {
+                "image": "<fwHairImage>:idle.<frame><fwHairDirectives>"
+              }
+            },
+            "struggle": {
+              "properties": {
+                "image": "<fwHairImage>:struggle.<frame><fwHairDirectives>"
+              }
+            }
+          }
+        }
+      },
+      "actorFrontArm": {
+        "properties": {
+          "centered": false,
+          "zLevel": 8,
+          "offset": [
+            0,
+            0
+          ]
+        },
+        "partStates": {
+          "pose": {
+            "hidden": {
+              "properties": {
+                "image": "<fwBlankPoseImage>:hidden.<frame>"
+              }
+            },
+            "idle": {
+              "properties": {
+                "image": "<fwFrontArmImage>:idle.<frame><fwBodyDirectives>"
+              }
+            },
+            "struggle": {
+              "properties": {
+                "image": "<fwFrontArmImage>:struggle.<frame><fwBodyDirectives>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

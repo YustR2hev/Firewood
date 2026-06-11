@@ -1,0 +1,6 @@
+{
+  "name" : "fwnpccapturedremove",
+  "effectConfig" : {},
+  "defaultDuration" : 0.1,
+  "scripts" : [ "/stats/effects/fwnpccapturedremove/fwnpccapturedremove.lua" ]
+}

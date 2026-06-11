@@ -1,0 +1,64 @@
+{
+  "objectName": "fwnpcteststation",
+  "colonyTags": [
+    "furniture"
+  ],
+  "rarity": "Common",
+  "category": "Firewood Station",
+  "price": 1,
+  "description": "A Firewood holding cell that renders a captured pod occupant as layered custom pose animation.",
+  "shortdescription": "Firewood Holding Cell",
+  "race": "generic",
+  "inventoryIcon": "fwnpcteststation_pose_icon.png",
+  "orientations": [
+    {
+      "image": "fwnpcteststation_station.png:empty.1",
+      "imagePosition": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "spaceScan": 0.1,
+      "anchors": [
+        "bottom"
+      ],
+      "renderLayer": "Object+1"
+    }
+  ],
+  "spaces": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "interactiveSpaces": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "animation": "fwnpcteststation.animation",
+  "scripts": [
+    "fwnpcteststation.lua"
+  ],
+  "scriptDelta": 5,
+  "uiConfig": "/interface/scripted/fwnpcstations/fwnpcteststation.config",
+  "acceptedPodItem": "fwnpcfilledpod",
+  "poseRegistry": "/firewood/poses/fwnpcposes.config",
+  "defaultPose": "holdingcell_idle",
+  "defaultPoseState": "idle",
+  "spawnNpcOnInsert": false,
+  "objectType": "container",
+  "slotCount": 1,
+  "frameCooldown": 5,
+  "autoCloseCooldown": 3600,
+  "containerCallback": "containerCallback"
+}

@@ -1,0 +1,32 @@
+{
+  "frameGrid": {
+    "size": [
+      48,
+      48
+    ],
+    "dimensions": [
+      4,
+      3
+    ],
+    "names": [
+      [
+        "hidden.1",
+        "hidden.2",
+        "hidden.3",
+        "hidden.4"
+      ],
+      [
+        "idle.1",
+        "idle.2",
+        "idle.3",
+        "idle.4"
+      ],
+      [
+        "struggle.1",
+        "struggle.2",
+        "struggle.3",
+        "struggle.4"
+      ]
+    ]
+  }
+}

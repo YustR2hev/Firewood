@@ -1,0 +1,20 @@
+{
+  "files.associations": {
+    "*.object": "json",
+    "*.recipe": "json",
+    "*.item": "json",
+    "*.activeitem": "json",
+    "*.material": "json",
+    "*.matitem": "json",
+    "*.codex": "json",
+    "*.config": "json",
+    "*.animation": "json",
+    "*.frames": "json",
+    "*.species": "json",
+    "*.biome": "json",
+    "*.weather": "json",
+    "*.questtemplate": "json",
+    "*.patch": "json",
+    "*.lua": "lua"
+  }
+}

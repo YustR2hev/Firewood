@@ -1,0 +1,17 @@
+{
+  "input": [
+    {
+      "item": "money",
+      "count": 1
+    }
+  ],
+  "output": {
+    "item": "fwnpcteststation",
+    "count": 1
+  },
+  "groups": [
+    "petstation",
+    "objects",
+    "all"
+  ]
+}

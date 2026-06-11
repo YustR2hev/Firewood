@@ -1,0 +1,25 @@
+{
+  "projectileName" : "fwnpccapturekill",
+
+  "image" : "/projectiles/fwnpccapturepod/fwnpccapturepod.png",
+  "animationCycle" : 0.1,
+  "frameNumber" : 1,
+
+  "physics" : "laser",
+  "timeToLive" : 0.05,
+  "speed" : 0,
+
+  "power" : 1,
+  "damageKind" : "hidden",
+  "damageType" : "IgnoresDef",
+
+  "piercing" : true,
+  "damagePoly" : [ [-1, -2], [1, -2], [1, 2], [-1, 2] ],
+
+  "statusEffects" : [
+    {
+      "effect" : "fwnpccapturedremove",
+      "duration" : 0.1
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name" : "firewoodnpcpods",
+  "friendlyName" : "Firewood NPC Pods",
+  "description" : "Adds prototype capture pods for weakened humanoid NPCs.",
+  "author" : "YourName",
+  "version" : "0.1.0"
+}
