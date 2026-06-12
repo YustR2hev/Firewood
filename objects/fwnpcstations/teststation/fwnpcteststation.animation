@@ -7,8 +7,6 @@
     "fwHeadImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/head.png",
     "fwHairImage": "/objects/fwnpcstations/actors/hair/generic/neutral/default.png",
     "fwFrontArmImage": "/objects/fwnpcstations/actors/humanoid/generic/neutral/frontarm.png",
-    "fwHeadwearImage": "/objects/fwnpcstations/actors/blank_pose.png",
-    "fwHeadwearDirectives": "",
     "fwBodyDirectives": "",
     "fwHeadDirectives": "",
     "fwHairDirectives": ""
@@ -187,32 +185,6 @@
             "struggle": {
               "properties": {
                 "image": "<fwHairImage>:struggle.<frame><fwHairDirectives>"
-              }
-            }
-          }
-        }
-      },
-      "actorHeadwear": {
-        "properties": {
-          "centered": false,
-          "zLevel": 7,
-          "offset": [0, 0]
-        },
-        "partStates": {
-          "pose": {
-            "hidden": {
-              "properties": {
-                "image": "<fwBlankPoseImage>:hidden.<frame>"
-              }
-            },
-            "idle": {
-              "properties": {
-                "image": "<fwHeadwearImage>:idle.<frame><fwHeadwearDirectives>"
-              }
-            },
-            "struggle": {
-              "properties": {
-                "image": "<fwHeadwearImage>:struggle.<frame><fwHeadwearDirectives>"
               }
             }
           }
