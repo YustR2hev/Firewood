@@ -33,6 +33,7 @@ function init()
     return setPose(poseName, poseState)
   end)
 
+  sanitizeStoredPodOnLoad()
   refreshAnimation(true)
 end
 
@@ -497,6 +498,90 @@ function syncInventoryBridgeSlot()
   end
 end
 
+
+function sanitizeStoredPodOnLoad()
+  if not storage.pod then return end
+
+  local valid, reason = isValidFilledPod(storage.pod)
+  if valid then return end
+
+  sb.logWarn(
+    "[Firewood Test Station] Stored pod is no longer acceptable (%s); ejecting it and clearing furniture render",
+    tostring(reason)
+  )
+
+  world.spawnItem(storage.pod, entity.position())
+  storage.pod = nil
+  storage.occupantName = nil
+  storage.poseState = config.getParameter("defaultPoseState", "idle")
+  self.poseTimer = 0
+  self.loggedIdentityForLink = nil
+end
+
+function isReleasedOrLinkedPod(params)
+  if type(params) ~= "table" then
+    return false
+  end
+
+  -- Normal released state written by fwnpcfilledpod.lua when the NPC is out of the pod.
+  if params.released == true then
+    return true, "podReleased"
+  end
+
+  -- Older or half-updated pods can still carry release markers even if released is not true.
+  if nonEmptyString(params.releasedUniqueId) then
+    return true, "podReleased"
+  end
+
+  if params.releasedEntityId ~= nil and params.releasedEntityId ~= false and params.releasedEntityId ~= 0 and params.releasedEntityId ~= "" then
+    return true, "podNpcOut"
+  end
+
+  local linkId = params.linkId
+  if not nonEmptyString(linkId) then
+    return false
+  end
+
+  local record = getReleasedRecord(linkId)
+  if type(record) == "table" and record.released == true then
+    return true, "podReleasedRecord"
+  end
+
+  local liveNpcId = findLiveLinkedNpc(linkId)
+  if liveNpcId then
+    return true, "podNpcOut"
+  end
+
+  return false
+end
+
+function findLiveLinkedNpc(linkId)
+  if not nonEmptyString(linkId) then return nil end
+
+  local ok, result = pcall(world.loadUniqueEntity, linkId)
+  if ok and result and result ~= 0 and world.entityExists(result) then
+    return result
+  end
+
+  return nil
+end
+
+function getReleasedRecord(linkId)
+  if not nonEmptyString(linkId) then return nil end
+
+  local ok, record = pcall(world.getProperty, releasedRecordKey(linkId))
+  if ok then return record end
+  return nil
+end
+
+function releasedRecordKey(linkId)
+  return "fwnpcpods_released_" .. tostring(linkId)
+end
+
+function nonEmptyString(value)
+  return type(value) == "string" and value ~= ""
+end
+
 function isValidFilledPod(pod)
   if type(pod) ~= "table" then
     return false, "notItemDescriptor"
@@ -512,8 +597,9 @@ function isValidFilledPod(pod)
 
   local params = pod.parameters or {}
 
-  if params.released then
-    return false, "podReleased"
+  local released, releasedReason = isReleasedOrLinkedPod(params)
+  if released then
+    return false, releasedReason or "podReleased"
   end
 
   local npcData = params.npcData or params.originalNpcData
